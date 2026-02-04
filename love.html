@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Love For You ❤️</title>
+
+<style>
+body {
+    background-image: url("https://i.imgur.com/U3JQJ3E.jpg");
+    background-size: cover;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: white;
+}
+
+.overlay{
+    background: rgba(0,0,0,0.6);
+    padding: 50px;
+    min-height: 100vh;
+}
+
+h1{
+    font-size: 48px;
+    color: #ffb6c1;
+}
+
+p{
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+button{
+    padding: 15px 40px;
+    font-size: 22px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.yes{
+    background: #ff4d6d;
+    color: white;
+}
+
+.no{
+    background: #444;
+    color: white;
+}
+
+#result{
+    font-size: 26px;
+    margin-top: 30px;
+    color: #ffd700;
+}
+</style>
+
+<script>
+function yesClick(){
+    document.getElementById("result").innerHTML =
+    "❤️ I will be the best caring and loving husband for you ❤️";
+}
+
+function noClick(){
+    document.getElementById("result").innerHTML =
+    "🔥 You have no option other than to accept this hot romantic munda 🔥";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<h1>My Beautiful Wife ❤️</h1>
+
+<p>
+From the first day I met you,<br>
+my world became brighter.<br><br>
+
+You are my love,<br>
+my strength,<br>
+my best friend,<br>
+my forever. ❤️<br><br>
+
+This is my little love letter for you…<br><br>
+
+Every heartbeat of mine whispers your name.<br>
+Every dream of mine has only one face — Yours.<br>
+I promise to love you, protect you and cherish you forever. 💖
+</p>
+
+<h2>Will you be my Valentine forever and ever? 💍</h2>
+
+<button class="yes" onclick="yesClick()">YES ❤️</button>
+<button class="no" onclick="noClick()">NO 😜</button>
+
+<div id="result"></div>
+
+</div>
+
+</body>
+</html>
