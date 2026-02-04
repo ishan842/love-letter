@@ -1,103 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Love For You ❤️</title>
+<meta charset="UTF-8">
+<title>Ishan ❤️ Rashmi</title>
 
 <style>
-body {
-    background-image: url("https://i.imgur.com/U3JQJ3E.jpg");
-    background-size: cover;
-    text-align: center;
-    font-family: 'Georgia', serif;
-    color: white;
+body{
+margin:0;
+font-family:Arial;
+background:black;
+overflow:hidden;
+color:white;
+text-align:center;
+}
+
+#bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+z-index:-1;
+transition:1s;
 }
 
 .overlay{
-    background: rgba(0,0,0,0.6);
-    padding: 50px;
-    min-height: 100vh;
+background:rgba(0,0,0,0.6);
+min-height:100vh;
+padding-top:40px;
 }
 
-h1{
-    font-size: 48px;
-    color: #ffb6c1;
-}
-
-p{
-    font-size: 22px;
-    line-height: 1.8;
-}
+h1{color:pink;font-size:45px;}
+p{font-size:22px;}
 
 button{
-    padding: 15px 40px;
-    font-size: 22px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    margin: 20px;
+padding:15px 25px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+margin:10px;
 }
 
-.yes{
-    background: #ff4d6d;
-    color: white;
+.yes{background:#ff4d6d;color:white;}
+.no{background:#555;color:white;}
+
+.heart{
+position:fixed;
+color:red;
+font-size:20px;
+animation:fall 6s linear infinite;
 }
 
-.no{
-    background: #444;
-    color: white;
-}
-
-#result{
-    font-size: 26px;
-    margin-top: 30px;
-    color: #ffd700;
+@keyframes fall{
+0%{top:-10%;}
+100%{top:110%;}
 }
 </style>
-
-<script>
-function yesClick(){
-    document.getElementById("result").innerHTML =
-    "❤️ I will be the best caring and loving husband for you ❤️";
-}
-
-function noClick(){
-    document.getElementById("result").innerHTML =
-    "🔥 You have no option other than to accept this hot romantic munda 🔥";
-}
-</script>
-
 </head>
 
 <body>
 
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BACKGROUND -->
+<div id="bg"></div>
+
 <div class="overlay">
 
-<h1>My Beautiful Wife ❤️</h1>
+<h1>Ishan ❤️ Rashmi</h1>
 
 <p>
-From the first day I met you,<br>
-my world became brighter.<br><br>
-
-You are my love,<br>
-my strength,<br>
-my best friend,<br>
+You are my today,<br>
+my tomorrow,<br>
 my forever. ❤️<br><br>
 
-This is my little love letter for you…<br><br>
-
-Every heartbeat of mine whispers your name.<br>
-Every dream of mine has only one face — Yours.<br>
-I promise to love you, protect you and cherish you forever. 💖
+Every heartbeat whispers your name Rashmi.<br>
+I love you endlessly. 💖
 </p>
 
 <h2>Will you be my Valentine forever and ever? 💍</h2>
 
-<button class="yes" onclick="yesClick()">YES ❤️</button>
-<button class="no" onclick="noClick()">NO 😜</button>
+<button class="yes" onclick="yes()">YES ❤️</button>
+<button class="no" onclick="no()">NO 😏</button>
 
-<div id="result"></div>
+<br><br>
+<button class="yes" onclick="playMusic()">Play Romantic Music 🎵</button>
+
+
+<h2 id="msg"></h2>
 
 </div>
+
+<script>
+
+function playMusic(){
+document.getElementById("music").play();
+}
+
+
+/* BUTTONS */
+function yes(){
+document.getElementById("msg").innerHTML =
+"I will be the best caring and loving husband for you ❤️💍";
+}
+
+function no(){
+document.getElementById("msg").innerHTML =
+"You have no option other than to accept this hot romantic munda 😘🔥";
+}
+
+/* SLIDESHOW */
+var photos=["photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg"];
+var i=0;
+
+function slide(){
+document.getElementById("bg").style.backgroundImage =
+"url("+photos[i]+")";
+i=(i+1)%photos.length;
+}
+setInterval(slide,3000);
+slide();
+
+/* HEARTS */
+setInterval(function(){
+var h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"%";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},300);
+
+</script>
 
 </body>
 </html>
